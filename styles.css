@@ -65,59 +65,136 @@ body{
         }
     }
 }
-header{
-    padding:2% 11%;
-    display:flex;
-    align-items: center;
-    #logo{
-        text-decoration: none;
+#app{
+    header{
+        padding:2% 11%;
         display:flex;
-        gap:3px;
-        #icon-logo{
-            text-align: center;
-            width: 21px;
-            fill:var(--main-color);
-            
-        }
-        #text-logo{
-            
-            .top{
-                font-size: 5px;
-                margin-top: -5px;
-                color:var(--sub-color);
+        align-items: center;
+        #logo{
+            text-decoration: none;
+            display:flex;
+            gap:3px;
+            #icon-logo{
+                text-align: center;
+                width: 21px;
+                fill:var(--main-color);
+                
             }
-            .main{
-                font-size:13px;
-                color:var(--text-color);
-                margin-right:5px;
+            #text-logo{
+                
+                .top{
+                    font-size: 5px;
+                    margin-top: -5px;
+                    color:var(--sub-color);
+                }
+                .main{
+                    font-size:13px;
+                    color:var(--text-color);
+                    margin-right:5px;
+                }
             }
-        }
 
+        }
+        nav{
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            gap:5px;
+            .nav-left{
+                display:flex;
+            }
+            .nav-middle{
+                display:flex;
+            }
+            .nav-right{
+                display:flex;
+            }
+            a{
+                text-decoration: none;
+                color:var(--sub-color);
+                padding:5px;
+            }
+            .icon{
+            font-size: 9px;
+                &:hover{
+                    color:var(--text-color);
+                }
+            }
+        }
+        @media only screen and (max-width: 430px){
+            #text-logo{
+                display:none;
+            }
+        }
     }
-    nav{
+    main{
         width:100%;
         display:flex;
-        justify-content: space-between;
-        align-items: center;
-        gap:5px;
-        .nav-left{
+        #menu{
             display:flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            padding:3px 30px;
+            .menu-buttons{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--sub-alt-color);
+                padding:0rem .3rem;
+                border-radius: 5px;
+                .left-buttons{
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .spacer{
+                    width:3px;
+                    height:15px;
+                    border-radius: 5px;
+                    background-color: var(--bg-color);
+                    margin:5px;
+                }
+                .middle-buttons{
+                    display:flex;
+                    justify-content:center;
+                    align-items: center;
+                }
+                .right-buttons{
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
         }
-        .nav-middle{
-            display:flex;
-        }
-        .nav-right{
-            display:flex;
-        }
-        a{
-            text-decoration: none;
+        .buttonsOfMenu{
+            font-family:'Ubuntu Mono', sans-serif;
+            background-color: transparent;
             color:var(--sub-color);
-            padding:5px;
-        }
-        .icon{
-        font-size: 9px;
+            border:none;
+            font-size:7px;
+            margin:5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
             &:hover{
                 color:var(--text-color);
+                cursor:pointer;
+            }
+            &.active{
+                color:var(--main-color)
+            }
+            i{
+                vertical-align: middle;
+                margin:2px;
+                font-size:7px;
+            }
+        }
+        @media only screen and (max-width: 430px){
+            #menu{
+                display:none;
             }
         }
     }
