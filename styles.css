@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --bg-color: #212830;
+    --main-color: #41ce5c;
+    --caret-color: #41ce5c;
+    --sub-color: #788386;
+    --sub-alt-color: #141b23;
+    --text-color: #ccdae6;
+    --error-color: #c23e3a;
+    --error-extra-color: #8d1611;
+}
+
+*, *::before, *::after{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    user-select: none;
+}
+body{
+    height:100vh;
+    font-family:'Ubuntu Mono',sans-serif;
+    background-color: var(--bg-color);
+}
+
+#bannerCenter{
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    background-color: #41ce5c;
+    .banner{
+        margin:auto;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:0 9%;
+        gap:3px;
+        .left{
+            display:flex;
+            .img{
+                display:flex;
+                img{
+                    width:50px;
+                    height: 21px;
+                    object-fit: fill;
+                }
+            }
+            .left-icon{
+                display:none;
+            }
+        }
+        .middle{
+            color:var(--text-color);
+            font-size:11px;
+            user-select: text;
+        }
+        .right{
+            color:var(--text-color);
+            font-size: 11px;
+            cursor: pointer;
+            &:hover{
+                color:var(--sub-color);
+            }
+        }
+    }
+}
+header{
+    padding:2% 11%;
+    display:flex;
+    align-items: center;
+    #logo{
+        text-decoration: none;
+        display:flex;
+        gap:3px;
+        #icon-logo{
+            text-align: center;
+            width: 21px;
+            fill:var(--main-color);
+            
+        }
+        #text-logo{
+            
+            .top{
+                font-size: 5px;
+                margin-top: -5px;
+                color:var(--sub-color);
+            }
+            .main{
+                font-size:13px;
+                color:var(--text-color);
+                margin-right:5px;
+            }
+        }
+
+    }
+    nav{
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:5px;
+        .nav-left{
+            display:flex;
+        }
+        .nav-middle{
+            display:flex;
+        }
+        .nav-right{
+            display:flex;
+        }
+        a{
+            text-decoration: none;
+            color:var(--sub-color);
+            padding:5px;
+        }
+        .icon{
+        font-size: 9px;
+            &:hover{
+                color:var(--text-color);
+            }
+        }
+    }
+}
