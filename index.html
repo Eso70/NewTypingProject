@@ -90,28 +90,28 @@
             <div id="menu">
                 <div class="menu-buttons">
                     <div class="left-buttons">
-                        <button class="buttonsOfMenu">
+                        <button class="buttonsOfMenu" id="punc">
                             <i class="fas fa-fw fa-at"></i>punctuation
                         </button>
-                        <button class="buttonsOfMenu">
+                        <button class="buttonsOfMenu" id="num">
                             <i class="fas fa-fw fa-hashtag"></i>number
                         </button>
                     </div>
                     <div class="spacer"></div>
                     <div class="middle-buttons">
-                        <button class="buttonsOfMenu active">
+                        <button class="buttonsOfMenu active" id="time">
                             <i class="fas fa-fw fa-clock"></i>time
                         </button>
-                        <button class="buttonsOfMenu">
+                        <button class="buttonsOfMenu" id="word">
                             <i class="fas fa-fw fa-font"></i>word
                         </button>
-                        <button class="buttonsOfMenu">
+                        <button class="buttonsOfMenu" id="quote">
                             <i class="fas fa-fw fa-quote-left"></i>quote
                         </button>
-                        <button class="buttonsOfMenu">
+                        <button class="buttonsOfMenu" id="zen">
                             <i class="fas fa-fw fa-mountain"></i>zen
                         </button>
-                        <button class="buttonsOfMenu">
+                        <button class="buttonsOfMenu" id="custom">
                             <i class="fas fa-fw fa-wrench"></i>custom
                         </button>
                     </div>
@@ -135,7 +135,65 @@
                     </div>
                 </div>
             </div>
+            <div id="main-section">
+                <div class="test-notice-mode">
+                    <div class="left-section"></div>
+                    <div class="middle-section">
+                        <button class="language-btn">
+                            <i class="fas fa-globe-americas"></i>english
+                        </button>
+                    </div>
+                    <div class="right-section"></div>
+                </div>
+                <div class="typing-section" tabindex="0">
+                    <div id="words"></div>
+                    <div id="auto-focus-warning">
+                        <i class="fas fa-fw fa-mouse-pointer"></i>
+                        Click here to focus.
+                    </div>
+                </div>
+            </div>
         </main>
+        <footer>
+            <div class="keyTips">
+                <kbd>tab</kbd> - restart test<br>
+                <kbd>esc</kbd> or 
+                <kbd>ctrl</kbd> +
+                <kbd>shift</kbd> +
+                <kbd>p</kbd> - command line
+            </div>
+            <div class="footer-section">
+                <div class="footer-left">
+                    <button class="footer-navs">
+                        <i class="fas fa-fw fa-envelope"></i>contact
+                    </button>
+                    <button class="footer-navs">
+                        <i class="fas fa-fw fa-donate"></i>support
+                    </button>
+                    <a href="#" class="footer-navs">
+                        <i class="fas fa-fw fa-code"></i>github
+                    </a>
+                    <a href="#" class="footer-navs">
+                        <i class="fab fa-fw fa-discord"></i>discord
+                    </a>
+                    <a href="#" class="footer-navs">
+                        <i class="fa-brands fa-facebook"></i>facebook
+                    </a>
+                    <a href="#" class="footer-navs">
+                        <i class="fas fa-fw fa-file-contract"></i>terms
+                    </a>
+                </div>
+                <div class="footer-middle"></div>
+                <div class="footer-right">
+                    <button class="footer-navs">
+                        <i class="fas fa-fw fa-palette"></i> github
+                    </button>
+                    <button class="footer-navs">
+                        <i class="fas fa-fw fa-code-branch"></i>v1.0.0
+                    </button>
+                </div>
+            </div>
+        </footer>
     </div>
     <script src="scripts.js"></script>
 </body>

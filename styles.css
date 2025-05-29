@@ -129,8 +129,10 @@ body{
         }
     }
     main{
+        position:relative;
+        padding:0 3%;
         width:100%;
-        display:flex;
+        padding-bottom: 60px;
         #menu{
             display:flex;
             justify-content: center;
@@ -195,6 +197,156 @@ body{
         @media only screen and (max-width: 430px){
             #menu{
                 display:none;
+            }
+        }
+        #main-section{
+            width:100%;
+            padding:71px;
+
+            .test-notice-mode{
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 3%;
+                .middle-section{
+                    display:flex;
+                    .language-btn{
+                        font-family:'Ubuntu Mono', sans-serif;
+                        background-color: transparent;
+                        color:var(--sub-color);
+                        border:none;
+                        font-size:13px;
+                        margin:5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        vertical-align: middle;
+                        i{
+                            vertical-align: middle;
+                            margin:2px 3px 0 0;
+                            font-size:11px;
+                        }
+                        &:hover{
+                            color:var(--text-color);
+                            cursor:pointer;
+                        }
+                    }
+                }
+            }
+            .typing-section{
+                width:100%;
+                font-size: 19px;
+                color:var(--sub-color);
+                padding:11px 0;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                &:focus{
+                    outline: 0;
+                }
+                &:focus #auto-focus-warning{
+                    display:none;
+                }
+                &:focus #words{
+                    filter: blur(0);
+                }
+                #words{
+                    filter: blur(5px);
+                    line-height: 25px;
+                    height: 70px;
+                    overflow: hidden;
+                    .word{
+                        display:inline-block;
+                        margin: 0 5px;
+                    }
+                }
+                #auto-focus-warning{
+                    position: absolute;
+                    top: calc(50% - 50px); /* 50px = half the height of the element */
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80%;
+                    height: 100px; /* Must be set for calc to work correctly */
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    color:var(--text-color);
+                    font-size: 11px;
+                }
+                #words:focus #auto-focus-warning{
+                    display:none;
+                }
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        flex-direction: column; /* stack keyTips and footer-section */
+        align-items: stretch; /* makes children fill width */
+        .keyTips{
+            align-items: center;
+            justify-content: center;
+            color: var(--sub-color);
+            font-size: .4rem;
+            text-align: center;
+            padding: 10px;
+            line-height: 19px;
+            gap:5px;
+            kbd{
+                color:var(--bg-color);
+                background-color: var(--sub-color);
+                padding: 1px 2.5px;
+                margin: 0 .5em;
+                border-radius: .1rem;
+                display:inline-block;
+                line-height: .7rem;
+            }
+        }
+        .footer-section{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:0 3.9% 1%;
+            .footer-left{
+                display:flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .footer-middle{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer-right{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer-navs{
+                font-family:'Ubuntu Mono', sans-serif;
+                background-color: transparent;
+                color:var(--sub-color);
+                border:none;                        font-size:13px;
+                margin:5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                vertical-align: middle;
+                font-size:7px;
+                text-decoration: none;
+                i{
+                    vertical-align: middle;
+                    font-size:7px;
+                    margin: 0 2px;
+                }
+                &:hover{
+                    color:var(--text-color);
+                    cursor:pointer;
+                }
             }
         }
     }
