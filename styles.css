@@ -23,7 +23,7 @@ body{
     background-color: var(--bg-color);
 }
 
-#bannerCenter{
+#banner-center{
     top:0;
     left:0;
     right:0;
@@ -202,7 +202,26 @@ body{
         #main-section{
             width:100%;
             padding:71px;
-
+            
+            #capslock{
+                position:absolute;
+                top: calc(50% - 100px);
+                left:50%;
+                transform: translateX(-50%);
+                display:none;
+                justify-content: center;
+                align-items: center;
+                .text-and-icon{
+                    background-color: var(--main-color);
+                    color: var(--sub-alt-color);
+                    font-size:11px;
+                    padding:7px;
+                    border-radius: 5px;
+                    i{
+                        font-size:9px;
+                    }
+                }
+            }
             .test-notice-mode{
                 display:flex;
                 justify-content: space-between;
@@ -233,7 +252,7 @@ body{
                     }
                 }
             }
-            .typing-section{
+            #typing-section{
                 width:100%;
                 font-size: 19px;
                 color:var(--sub-color);
@@ -251,14 +270,30 @@ body{
                     filter: blur(0);
                 }
                 #words{
+                    position:relative;
                     filter: blur(5px);
-                    line-height: 25px;
-                    height: 70px;
+                    line-height: 27px;
+                    height: 80px;
                     overflow: hidden;
                     .word{
                         display:inline-block;
                         margin: 0 5px;
                     }
+                    .correct{
+                        color:var(--text-color);
+                    }
+                    .incorrect{
+                        color:var(--error-color);
+                    }
+                }
+                #cursor {
+                    display: inline-block;
+                    width: 2px;
+                    height: 1.1em;
+                    border-radius: 9px;
+                    background-color: var(--caret-color);
+                    vertical-align:middle;
+                    animation: blink 1s step-end infinite;
                 }
                 #auto-focus-warning{
                     position: absolute;
@@ -274,9 +309,7 @@ body{
                     color:var(--text-color);
                     font-size: 11px;
                 }
-                #words:focus #auto-focus-warning{
-                    display:none;
-                }
+            
             }
         }
     }
@@ -350,4 +383,7 @@ body{
             }
         }
     }
+}
+@keyframes blink {
+    50% { opacity: 0; }
 }
