@@ -91,12 +91,16 @@ class TypingTest {
         const randomPunctuation = this.punctuationMarks[Math.floor(Math.random() * this.punctuationMarks.length)];
         html += this.formatWord(randomPunctuation);
       }
-      if (this.isNumberMode && Math.random() < 0.3) {
-        const numCount = Math.floor(Math.random() * 3) + 1;
-        for (let i = 0; i < numCount; i++) {
-          const randomNumber = this.numbers[Math.floor(Math.random() * this.numbers.length)];
-          html+= this.formatWord(randomNumber);
+      if (this.isNumberMode && Math.random() < 0.2) {
+        const numCount = Math.floor(Math.random() * 4) + 1;
+        const randomNumber = () => {
+          return this.numbers[Math.floor(Math.random() * this.numbers.length)];
+        };
+        let numStr = '';
+        for(let i = 0; i < numCount ; i++){
+          numStr += randomNumber();
         }
+        html+= this.formatWord(numStr);
       }
     }
     if (this.wordWrapper) {
@@ -118,9 +122,7 @@ class TypingTest {
   }
 
   formatWord(word) {
-    return `<div class="word"><span class="letter">${word
-      .split("")
-      .join("</span><span class='letter'>")}</span></div>`;
+    return `<div class="word"><span class="letter">${word.split("").join("</span><span class='letter'>")}</span></div>`;
   }
 
   addClass(el, cls) {

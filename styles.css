@@ -139,6 +139,31 @@ body{
             align-items: center;
             width:100%;
             padding:3px 30px;
+            .mobile-test-setting{
+                display:none;
+                margin-top:11px;
+                button{
+                    background-color: var(--sub-alt-color);
+                    color:var(--sub-color);
+                    font-size:7px;
+                    font-family: 'Ubuntu Mono';
+                    border:none;
+                    padding:7px 9px;
+                    border-radius: 5px;
+                    text-align: center;
+                    vertical-align: middle;
+                    letter-spacing: .5px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: var(--text-color);
+                        color:var(--bg-color);
+                    }
+                    i{
+                        vertical-align: middle;
+                        font-size: 5px;
+                    }
+                }
+            }
             .menu-buttons{
                 display:flex;
                 justify-content: center;
@@ -185,6 +210,9 @@ body{
                 color:var(--text-color);
                 cursor:pointer;
             }
+            &.active:hover{
+                color:var(--text-color);
+            }
             &.active{
                 color:var(--main-color)
             }
@@ -194,11 +222,18 @@ body{
                 font-size:7px;
             }
         }
-        @media only screen and (max-width: 430px){
-            #menu{
-                display:none;
+        @media only screen and (max-width: 430px) {
+            #menu > * {
+                display: none !important;
+            }
+
+            #menu > .mobile-test-setting {
+                display: flex !important; /* or block, if not using flex */
+                justify-content: center;
+                align-items: center;
             }
         }
+
         #main-section{
             width:100%;
             padding:71px;
@@ -312,6 +347,28 @@ body{
             
             }
         }
+        @media only screen and (max-width: 430px){
+            #main-section{
+                width:100%;
+                padding: 71px 3px;
+                #typing-section{
+                    #words{
+                        font-size:17px;
+                        line-height:25px;
+                    }
+                }
+                .test-notice-mode{
+                    .middle-section{
+                        .language-btn{
+                            font-size:11px;
+                            i{
+                                font-size: 9px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     footer{
         width: 100%;
@@ -379,6 +436,25 @@ body{
                 &:hover{
                     color:var(--text-color);
                     cursor:pointer;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 430px){
+        footer{
+            .keyTips{
+                font-size:5px;
+                letter-spacing: 1px;
+                
+            }
+            .footer-section{
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding:0 3.9% 2%;
+                .footer-navs{
+                    margin: 2px;
                 }
             }
         }
